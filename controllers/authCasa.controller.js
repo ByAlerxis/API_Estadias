@@ -1,4 +1,4 @@
-const casaModel = require('../models/casas.modeld.js');
+const casaModel = require('../models/casas.model.js');
 const authController = {};
 const jsonwebtoken = require('jsonwebtoken');
 

@@ -31,9 +31,6 @@ casasController.putCasa = async (req, res) => {
         telefono: req.body.telefono,
         dllC: req.body.dllC,
         dllV: req.body.dllV,
-        historial_dolar_main: req.body.historial_dolar_main,
-        historial_dolar: req.body.historial_dolar,
-        historial_put_conv: req.body.historial_put_conv,
     };
     await casaModel.findByIdAndUpdate(id, { $set: casa }, { new: true});
     res.json({ status: 'Casa de cambio actualizada'});

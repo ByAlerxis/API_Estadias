@@ -13,9 +13,6 @@ const CasasSchema = new Schema(
         rol: { type: String, require: true},
         dllV: { type: Number, require: true},
         dllC: { type: Number, require: true},
-        historial_dolar_main: [{ }],
-        historial_dolar: [{ }],
-        historial_put: [{ }],
     },
     {
         timestamps: true

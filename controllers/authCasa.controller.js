@@ -13,7 +13,7 @@ authController.signIn = async (req, res) => {
 }
 
 authController.signUp = async (req, res) => {
-    const {nombre_negocio, direccion, email, password, logo, telefono, id} = req.body;
+    const {nombre_negocio, direccion, email, password, logo, telefono, id, longitud, latitud} = req.body;
     const newCasa = new casaModel({
         id: id,
         nombre_negocio: nombre_negocio,
@@ -21,11 +21,13 @@ authController.signUp = async (req, res) => {
         email: email,
         password: password,
         logo: logo,
-        telefono: telefono
+        telefono: telefono,
+        latitud: latitud,
+        longitud: longitud
     });
 
     await newCasa.save();
-    const token = jsonwebtoken.sign({_id: newCasa._id, dllV: casa.dllV, dllC: casa.dllC, id: newCasa.id, nombre_negocio: newCasa.nombre_negocio, direccion: newCasa.direccion, email: newCasa.email, password: newCasa.password, logo: newCasa.logo, telefono: newCasa.telefono}, 'secret');
+    const token = jsonwebtoken.sign({_id: newCasa._id, longitud: casa.longitud, latitud: casa.latitud, dllV: casa.dllV, dllC: casa.dllC, id: newCasa.id, nombre_negocio: newCasa.nombre_negocio, direccion: newCasa.direccion, email: newCasa.email, password: newCasa.password, logo: newCasa.logo, telefono: newCasa.telefono}, 'secret');
 
     res.json({token});
 }

@@ -13,6 +13,8 @@ const CasasSchema = new Schema(
         rol: { type: String, require: true},
         dllV: { type: Number, require: true},
         dllC: { type: Number, require: true},
+        latitud : { type: Number, require: true},
+        longitud: { type: Number, require: true}
     },
     {
         timestamps: true

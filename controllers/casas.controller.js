@@ -31,6 +31,8 @@ casasController.putCasa = async (req, res) => {
         telefono: req.body.telefono,
         dllC: req.body.dllC,
         dllV: req.body.dllV,
+        latitud: req.body.latitud,
+        longitud: req.body.longitud
     };
     await casaModel.findByIdAndUpdate(id, { $set: casa }, { new: true});
     res.json({ status: 'Casa de cambio actualizada'});
